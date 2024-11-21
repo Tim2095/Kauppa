@@ -1,8 +1,11 @@
 import React from 'react'
+import Header from './components/Header'
 
 const App = () => {
   return (
-    <div className='max-w-custom-container mx-auto bg-red-300'></div>
+    <div className='container max-w-custom-container mx-auto'>
+      <Header />
+    </div>
   )
 }
 
