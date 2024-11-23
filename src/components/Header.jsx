@@ -38,16 +38,16 @@ const Header = () => {
       >
         <nav className="flex justify-center items-center flex-col h-full z-10 text-sm">
           <ul className="font-bold space-y-4">
-            <li>
+            <li className="px-2 py-1 bg-emerald-300 flex justify-center rounded-sm">
               <a href="">Shop</a>
             </li>
-            <li>
+            <li className="px-2 py-1 bg-emerald-300 flex justify-center rounded-sm">
               <a href="">On Sale</a>
             </li>
-            <li>
+            <li className="px-2 py-1 bg-emerald-300 flex justify-center rounded-sm">
               <a href="">New Arrivals</a>
             </li>
-            <li>
+            <li className="px-2 py-1 bg-emerald-300 flex justify-center rounded-sm">
               <a href="">Brands</a>
             </li>
           </ul>
