@@ -32,12 +32,12 @@ const Header = () => {
       }
 
       <div
-        className={`fixed inset-0  transform transition-all duration-300 text-sm ${
+        className={`fixed inset-0  transform transition-all duration-500 text-sm ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } z-20`}
       >
         <nav className="flex justify-center items-center flex-col h-full z-10 text-sm">
-          <ul className="font-bold space-y-2">
+          <ul className="font-bold space-y-4">
             <li>
               <a href="">Shop</a>
             </li>
