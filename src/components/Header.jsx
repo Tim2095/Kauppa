@@ -30,13 +30,13 @@ const Header = () => {
               />
             )}
             <a href="">
-              <img src={logoImg} alt="" className="" />
+              <img src={logoImg} alt="main logo" />
             </a>
           </div>
           <div className='flex  gap-4'>
-            <img src={searchLogo} alt="" />
-            <img src={cartLogo} alt="" />
-            <img src={profileLogo} alt="" />
+            <img src={searchLogo} alt="search logo" />
+            <img src={cartLogo} alt="cart logo" />
+            <img src={profileLogo} alt="profile logo" />
           </div>
         </div>
       }
