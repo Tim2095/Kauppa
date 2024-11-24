@@ -4,7 +4,7 @@ import searchLogo from "../assets/icons/search.png";
 import logoImg from "../assets/img/SHOP.CO.png";
 import closeImg from "../assets/icons/close.png";
 import cartLogo from '../assets/icons/cart.png'
-import profileLogo from '../assets/icons/profile.png'
+import profileLogo from '../assets/icons/Profile.png'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
