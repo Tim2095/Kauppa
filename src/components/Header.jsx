@@ -1,48 +1,43 @@
 import { useState } from "react";
-import burgerButton from "../assets/icons/burger.png";
-import searchLogo from "../assets/icons/search.png";
 import logoImg from "../assets/img/SHOP.CO.png";
-import closeImg from "../assets/icons/close.png";
-import cartLogo from '../assets/icons/cart.png'
-import profileLogo from '../assets/icons/Profile.png'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      {
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
+      <div className="flex items-center justify-between p-4">
+        <div className="flex items-center gap-4">
+          <div className="w-6 flex items-center justify-center">
             {!isOpen && (
-              <img
-                className="z-40 cursor-pointer relative w-6 h-6"
-                src={burgerButton}
-                alt="Burger Menu"
-                onClick={() => setIsOpen(!isOpen)}
-              />
+              <FontAwesomeIcon icon={faBars} onClick={() => setIsOpen(true)} />
             )}
             {isOpen && (
-              <img
-                src={closeImg}
-                alt=""
-                className="z-30 relative w-6 text"
-                onClick={() => setIsOpen(!isOpen)}
+              <FontAwesomeIcon
+                icon={faXmark}
+                onClick={() => setIsOpen(false)}
+                className="z-30 relative "
               />
             )}
-            <a href="">
-              <img src={logoImg} alt="main logo" />
-            </a>
           </div>
-          <div className='flex  gap-4'>
-            <img src={searchLogo} alt="search logo" />
-            <img src={cartLogo} alt="cart logo" />
-            <img src={profileLogo} alt="profile logo" />
-          </div>
+          <a href="/">
+            <img src={logoImg} alt="main logo" />
+          </a>
         </div>
-      }
+        <div className="flex gap-4 items-center justify-center">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <FontAwesomeIcon icon={faCartShopping} />
+          <FontAwesomeIcon icon={faUser} />
+        </div>
+      </div>
 
       <div
-        className={`fixed inset-0  transform transition-all duration-500 text-sm ${
+        className={`fixed inset-0 transform transition-all duration-500 text-sm ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } z-20`}
       >
