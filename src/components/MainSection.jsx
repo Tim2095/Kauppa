@@ -7,7 +7,7 @@ const MainSection = () => {
       <section>
         <div className="bg-hero pt-10">
           <div className="pl-4 pr-4">
-            <h1 className="text-3xl font-bold font-anton w-1/2 leading-8 tracking-wide mb-5">
+            <h1 className="text-3xl font-bold font-anton leading-8 tracking-wide mb-5">
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </h1>
             <p className="bg-hero font-dmSans">
