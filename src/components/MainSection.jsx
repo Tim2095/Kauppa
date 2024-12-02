@@ -42,7 +42,7 @@ const MainSection = () => {
         </div>
         <div className="relative h-screen w-full bg-cover bg-center bg-no-repeat bg-[url('../src/assets/img/main-section-mobile.png')] md:bg-[url('../src/assets/img/main-section.png')]">
           <img src={smallStar} alt="" className="absolute top-36 left-7" />
-          <img src={bigStar} alt="" className="absolute top-10 right-5" />
+          <img src={bigStar} alt="" className="absolute top-7 right-2" />
         </div>
         <div className="bg-black items-center">
           <div className="flex justify-between w-full p-4">
