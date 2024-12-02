@@ -1,5 +1,10 @@
 import smallStar from "../assets/img/hero-small-star.png";
 import bigStar from "../assets/img/hero-big-star.png";
+import versaciLogo from "../assets/img/mobile/versace.png";
+import zaraLogo from "../assets/img/mobile/zara.png";
+import gucciLogo from "../assets/img/mobile/gucci.png";
+import pradaLogo from "../assets/img/mobile/prada.png";
+import calvinLogo from "../assets/img/mobile/calvin.png";
 
 const MainSection = () => {
   return (
@@ -38,6 +43,47 @@ const MainSection = () => {
         <div className="relative h-screen w-full bg-cover bg-center bg-no-repeat bg-[url('../src/assets/img/main-section-mobile.png')] md:bg-[url('../src/assets/img/main-section.png')]">
           <img src={smallStar} alt="" className="absolute top-36 left-7" />
           <img src={bigStar} alt="" className="absolute top-10 right-5" />
+        </div>
+        <div className="bg-black items-center">
+          <div className="flex justify-between w-full p-4">
+            <div className="">
+              <img
+                src={versaciLogo}
+                alt=""
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div >
+              <img
+                src={zaraLogo}
+                alt=""
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div >
+              <img
+                src={gucciLogo}
+                alt=""
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+          <div className="flex justify-evenly p-4">
+            <div >
+              <img
+                src={pradaLogo}
+                alt=""
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div>
+              <img
+                src={calvinLogo}
+                alt=""
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </div>
