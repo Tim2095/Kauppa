@@ -30,17 +30,18 @@ const NewArrivals = () => {
           }`}
         >
           {products.map((product) => (
-            <div key={product.id} className="p-4 flex flex-col items-center">
+            <div key={product.id} className="p-2 flex flex-col items-center">
               <img
                 src={product.image}
                 alt={product.name}
                 className="w-48 h-48 object-cover rounded-xl"
               />
               <h1 className="mt-2 text-center">{product.name}</h1>
+              <p>${product.price}</p>
             </div>
           ))}
         </div>
-        <div className="text-center px-4">
+        <div className="text-center px-4 mt-10">
           <button
             onClick={() => setShowAllNewProducts(!showAllNewProducts)}
             className="w-full rounded-xl px-38 py-2 shadow-xl border-2 text-sm"
