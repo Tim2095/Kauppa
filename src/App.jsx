@@ -1,3 +1,4 @@
+import CustomerReview from './components/CustomerReview'
 import DressStyle from './components/DressStyle'
 import Header from './components/Header'
 import MainSection from './components/MainSection'
@@ -10,6 +11,7 @@ const App = () => {
       <MainSection />
       <NewArrivals />
       <DressStyle />
+      <CustomerReview />
     </div>
   )
 }

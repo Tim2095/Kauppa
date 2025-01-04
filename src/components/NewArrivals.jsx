@@ -36,10 +36,10 @@ const NewArrivals = () => {
                 alt={product.name}
                 className="w-48 h-48 object-cover rounded-xl"
               />
-              <div className="h-[10%] text-base overflow-hidden">
-                <h1 className="">{product.name}</h1>
+              <div className="h-[10%] text-base ">
+                <h1 className="font-dmSans font-bold text-base">{product.name}</h1>
               </div>
-              <div className="">
+              <div className="font-dmSans font-bold text-xl">
                 <p>${product.price}</p>
               </div>
             </div>
