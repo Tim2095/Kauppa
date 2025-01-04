@@ -15,7 +15,7 @@ const MainSection = () => {
             <h1 className="text-3xl font-bold font-anton leading-8 tracking-wide mb-5">
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </h1>
-            <p className="bg-hero font-dmSans">
+            <p className="bg-hero font-dmSans text-slate-500">
               Browse through our diverse range of meticulously crafted garments,
               designed to bring out your individuality and cater to your sense
               of style
