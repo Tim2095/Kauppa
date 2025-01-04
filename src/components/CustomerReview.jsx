@@ -20,13 +20,9 @@ const CustomerReview = () => {
       setItemsPerView(window.innerWidth >= 1024 ? 3 : 1);
     };
 
-    // Set initial value
-    updateItemsPerView();
-
-    // Add resize listener
+    updateItemsPerView(); 
     window.addEventListener("resize", updateItemsPerView);
 
-    // Clean up listener on unmount
     return () => window.removeEventListener("resize", updateItemsPerView);
   }, []);
 
@@ -43,7 +39,7 @@ const CustomerReview = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto mt-12">
+    <div className="w-full max-w-4xl mx-auto mt-12 overflow-hidden">
       {/* Header */}
       <div className="flex justify-between items-center px-4">
         <div className="font-anton font-bold">
@@ -64,12 +60,14 @@ const CustomerReview = () => {
         <div
           id="carousel"
           className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${(100 / itemsPerView) * currentIndex}%)` }}
+          style={{
+            transform: `translateX(-${(100 / itemsPerView) * currentIndex}%)`,
+          }}
         >
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="flex-shrink-0 p-6 rounded-lg shadow-md border-2 mx-4"
+              className="flex flex-col p-6 rounded-lg shadow-md border-2 mx-4"
               style={{ flexBasis: `${100 / itemsPerView}%` }}
             >
               <p className="text-lg font-semibold">{`"${review.text}"`}</p>
