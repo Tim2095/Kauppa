@@ -97,7 +97,7 @@ const CustomerReview = () => {
         {reviews.map((review, index) => (
           <div
             key={index}
-            className="p-6 bg-white shadow-lg rounded-lg text-center"
+            className="p-6 bg-white shadow-lg rounded-lg text-center h-40"
           >
             <StarRating rating={review.rating} />
             <p className="text-lg font-semibold text-gray-700">{`"${review.text}"`}</p>
