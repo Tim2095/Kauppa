@@ -26,7 +26,7 @@ const NewArrivals = () => {
           className={`grid gap-4 ${
             showAllNewProducts
               ? "grid-cols-2"
-              : "grid-cols-2"
+              : "grid-cols-2 overflow-hidden"
           }`}
         >
           {products.map((product) => (
