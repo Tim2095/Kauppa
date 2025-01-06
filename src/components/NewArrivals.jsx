@@ -26,7 +26,7 @@ const NewArrivals = () => {
           className={`grid gap-4 ${
             showAllNewProducts
               ? "grid-cols-2"
-              : "grid-cols-2 overflow-hidden h-64"
+              : "grid-cols-2"
           }`}
         >
           {products.map((product) => (
@@ -34,10 +34,10 @@ const NewArrivals = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-48 h-48 object-cover rounded-xl"
+                className="w-48  rounded-xl"
               />
-              <div className="h-[10%] text-base ">
-                <h1 className="font-dmSans font-bold text-base">{product.name}</h1>
+              <div className=" text-base ">
+                <h1 className="font-dmSans font-bold text-base mb-2">{product.name}</h1>
               </div>
               <div className="font-dmSans font-bold text-xl">
                 <p>${product.price}</p>
