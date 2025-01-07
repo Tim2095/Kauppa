@@ -8,7 +8,6 @@ const NewArrivals = () => {
   useEffect(() => {
     const fetchNewProducts = async () => {
       const newProducts = await productService.getNewProducts();
-      console.log(newProducts);
       setProducts(newProducts);
     };
 
