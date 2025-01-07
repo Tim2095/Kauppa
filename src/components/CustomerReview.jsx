@@ -73,7 +73,7 @@ const CustomerReview = () => {
     <div className="relative w-full max-w-2xl mx-auto p-4">
       {/* Custom Arrow Buttons */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-center text-xl font-bold mb-4">
+        <h2 className="text-center text-xl font-bold mb-4 font-anton">
           OUR HAPPY CUSTOMERS
         </h2>
         <div>
@@ -93,7 +93,7 @@ const CustomerReview = () => {
       </div>
 
       {/* Slider */}
-      <Slider ref={sliderRef} {...settings} className="border-2 rounded-md">
+      <Slider ref={sliderRef} {...settings} className="border-2 rounded-lg">
         {reviews.map((review, index) => (
           <div
             key={index}
