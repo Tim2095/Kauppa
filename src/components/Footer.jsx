@@ -34,18 +34,18 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <div className="flex gap-x-20">
+          <div className="flex ml-4 justify-between mb-6 mt-6">
             <div>
-              <ul className="">
-                <li>Company</li>
+              <ul className="flex flex-col gap-4 text-sm">
+                <li className="tracking-widest uppercase font-bold">Company</li>
                 <li>About</li>
                 <li>Features</li>
                 <li>Works</li>
                 <li>Career</li>
               </ul>
             </div>
-            <div>
-              <ul className="">
+            <div className="w-[50%]">
+              <ul className="flex flex-col gap-4 text-sm">
                 <li>Help</li>
                 <li>Customer Support</li>
                 <li>Delivery Details</li>
@@ -54,9 +54,9 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="flex gap-x-20">
+          <div className="flex ml-4 justify-between ">
             <div>
-              <ul className="">
+              <ul className="flex flex-col gap-4 text-sm">
                 <li>FAQ</li>
                 <li>Account</li>
                 <li>Manage Deliveries</li>
@@ -64,8 +64,8 @@ const Footer = () => {
                 <li>Payment</li>
               </ul>
             </div>
-            <div>
-              <ul className="">
+            <div className="w-[50%]">
+              <ul className="flex flex-col gap-4 text-sm">
                 <li>Resources</li>
                 <li>Free eBook</li>
                 <li>Development Tutorial</li>
