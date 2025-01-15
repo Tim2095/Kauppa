@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
             <div className="w-[50%]">
               <ul className="flex flex-col gap-4 text-sm">
-                <li>Help</li>
+                <li className="tracking-widest uppercase font-bold">Help</li>
                 <li>Customer Support</li>
                 <li>Delivery Details</li>
                 <li>Terms & Conditions</li>
@@ -57,7 +57,7 @@ const Footer = () => {
           <div className="flex ml-4 justify-between ">
             <div>
               <ul className="flex flex-col gap-4 text-sm">
-                <li>FAQ</li>
+                <li className="tracking-widest uppercase font-bold">FAQ</li>
                 <li>Account</li>
                 <li>Manage Deliveries</li>
                 <li>Orders</li>
@@ -66,7 +66,7 @@ const Footer = () => {
             </div>
             <div className="w-[50%]">
               <ul className="flex flex-col gap-4 text-sm">
-                <li>Resources</li>
+                <li className="tracking-widest uppercase font-bold">Resources</li>
                 <li>Free eBook</li>
                 <li>Development Tutorial</li>
                 <li>How to - Blog</li>
