@@ -9,7 +9,7 @@ import {
 const Footer = () => {
   return (
     <footer className="mt-10">
-      <div className="bg-secondary pt-4">
+      <div className="bg-secondary pt-4 pb-10 ">
         <div className="pl-4 mb-5">
           <h3 className="mb-4 font-bold text-2xl font-anton tracking-wider">
             SHOP.CO
@@ -66,7 +66,9 @@ const Footer = () => {
             </div>
             <div className="w-[50%]">
               <ul className="flex flex-col gap-4 text-sm">
-                <li className="tracking-widest uppercase font-bold">Resources</li>
+                <li className="tracking-widest uppercase font-bold">
+                  Resources
+                </li>
                 <li>Free eBook</li>
                 <li>Development Tutorial</li>
                 <li>How to - Blog</li>
@@ -75,7 +77,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div></div>
+        <div className="mt-10" >
+          <p className="border-t-2 pt-4 ml-4 mr-4">Shop.co © 2000-2023, All Rights Reserved</p>
+        </div>
       </div>
     </footer>
   );
