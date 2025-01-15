@@ -5,6 +5,11 @@ import {
   faInstagram,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import visaCard from '../assets/logo/mobile/visa.png'
+import masterCard from '../assets/logo/mobile/masterCard.png'
+import payPal from '../assets/logo/mobile/paypal.png'
+import applePay from '../assets/logo/mobile/applePay.png'
+import googlePay from '../assets/logo/mobile/gPay.png'
 
 const Footer = () => {
   return (
@@ -77,8 +82,15 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-10" >
+        <div className="mt-10 text-center" >
           <p className="border-t-2 pt-4 ml-4 mr-4">Shop.co © 2000-2023, All Rights Reserved</p>
+        </div>
+        <div className="flex mt-4 justify-center">
+          <img src={visaCard} alt="" />
+          <img src={masterCard} alt="" />
+          <img src={payPal} alt="" />
+          <img src={applePay} alt="" />
+          <img src={googlePay} alt="" />
         </div>
       </div>
     </footer>
