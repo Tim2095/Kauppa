@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 import CustomerReview from "./components/CustomerReview";
 import DressStyle from "./components/DressStyle";
 import Footer from "./components/Footer";
@@ -7,6 +8,8 @@ import NewArrivals from "./components/NewArrivals";
 import SubscribeNews from "./components/SubscribeNews";
 
 const App = () => {
+  const dispatch = useDispatch()
+
   return (
     <div className="container max-w-custom-container mx-auto">
       <Header />
@@ -19,6 +22,5 @@ const App = () => {
     </div>
   );
 };
-
 
 export default App;
