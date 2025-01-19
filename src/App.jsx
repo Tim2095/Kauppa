@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getInitialProducts } from "./reducer/product-slice";
 import productServices from './services/product'
 import CustomerReview from "./components/CustomerReview";
@@ -14,9 +14,17 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(productServices.getAllProducts)
-  })
- 
+    const fetchAllProducts = async () => {
+      const products = await productServices.getAllProducts()
+      dispatch(getInitialProducts(products))
+    }
+    fetchAllProducts()
+  
+  }, [])
+  
+  const products = useSelector(state => state.product) 
+  console.log(products)
+
   return (
     <div className="container max-w-custom-container mx-auto">
       <Header />
