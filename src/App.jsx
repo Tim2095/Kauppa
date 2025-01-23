@@ -20,10 +20,9 @@ const App = () => {
     }
     fetchAllProducts()
   
-  }, [])
+  }, [dispatch])
   
-  const products = useSelector(state => state.product) 
-  console.log(products)
+
 
   return (
     <div className="container max-w-custom-container mx-auto">

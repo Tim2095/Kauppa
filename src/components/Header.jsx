@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import logoImg from "../assets/img/SHOP.CO.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +9,23 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  const [searchedProduct, setSearchedProduct] = useState("");
+  console.log(searchedProduct);
+  const products = useSelector((state) => state.product);
+  console.log(products);
+
+  const filteredProducts = products.filter((product) => {
+    if (searchedProduct) {
+      return product?.name
+        ?.toLowerCase()
+        .startsWith(searchedProduct.toLowerCase());
+    }
+    return "";
+  });
+  console.log(filteredProducts);
+
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <header className="pl-4 pr-4 pt-6">
       <div className="flex items-center justify-between">
@@ -30,7 +47,34 @@ const Header = () => {
           </a>
         </div>
         <div className="flex gap-4 items-center justify-center">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
+          />
+          {isSearchOpen && (
+            <div className="h-screen fixed inset-0 z-30 bg-opacity-80 bg-slate-800">
+              <div className="w-full h-[7%] bg-red-300 flex items-center justify-between">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className="w-[80%] h-full"
+                  onChange={(e) => setSearchedProduct(e.target.value)}
+                />
+                
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  onClick={() => setIsSearchOpen(false)}
+                  className="z-30 relative "
+                />
+              </div>
+              <div className="w-screen h-screen bg-white">
+                {filteredProducts.map((product) => (
+                  <h2 key={product.id}>{product.name}</h2>
+                ))}
+              </div>
+            </div>
+          )}
           <FontAwesomeIcon icon={faCartShopping} />
           <FontAwesomeIcon icon={faUser} />
         </div>
