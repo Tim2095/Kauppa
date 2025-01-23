@@ -52,25 +52,25 @@ const Header = () => {
             onClick={() => setIsSearchOpen(!isSearchOpen)}
           />
           {isSearchOpen && (
-            <div className="h-screen fixed inset-0 z-30 bg-opacity-80 bg-slate-800">
-              <div className="w-full h-[7%] bg-red-300 flex items-center justify-between">
+            <div className="fixed inset-0 bg-white z-50 flex flex-col items-center pt-6 ">
+              <div className="w-full flex items-center justify-between px-4">
                 <input
                   type="text"
-                  name=""
-                  id=""
-                  className="w-[80%] h-full"
+                  className="w-[80%] h-10 border-2 border-gray-300 rounded px-2"
+                  placeholder="Search for products..."
                   onChange={(e) => setSearchedProduct(e.target.value)}
                 />
-                
                 <FontAwesomeIcon
                   icon={faXmark}
                   onClick={() => setIsSearchOpen(false)}
-                  className="z-30 relative "
+                  className="text-xl cursor-pointer"
                 />
               </div>
-              <div className="w-screen h-screen bg-white">
+              <div className="w-full mt-4 px-4">
                 {filteredProducts.map((product) => (
-                  <h2 key={product.id}>{product.name}</h2>
+                  <h2 key={product.id} className="text-lg font-semibold my-2">
+                    {product.name}
+                  </h2>
                 ))}
               </div>
             </div>
