@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import { useEffect } from "react";
 import Casual from "./components/clothes-selection/Casual";
 import HomePage from "./components/HomePage";
+import Product from "./components/Product";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="casual" element={<Casual />} />
+        <Route path="products/:productId" element={<Product />} />
       </Routes>
       <Footer />
     </div>
