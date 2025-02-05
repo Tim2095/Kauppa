@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import productService from "../services/product";
+import { Link } from "react-router-dom";
 
 const NewArrivals = () => {
   const [showAllNewProducts, setShowAllNewProducts] = useState(false);
@@ -30,17 +31,21 @@ const NewArrivals = () => {
         >
           {products.map((product) => (
             <div key={product.id} className="p-2 flex flex-col">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-48  rounded-xl"
-              />
-              <div className=" text-base ">
-                <h1 className="font-dmSans font-bold text-base mb-2">{product.name}</h1>
-              </div>
-              <div className="font-dmSans font-bold text-xl">
-                <p>${product.price}</p>
-              </div>
+              <Link to={`products/${product.id}`}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-48  rounded-xl"
+                />
+                <div className=" text-base ">
+                  <h1 className="font-dmSans font-bold text-base mb-2">
+                    {product.name}
+                  </h1>
+                </div>
+                <div className="font-dmSans font-bold text-xl">
+                  <p>${product.price}</p>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
