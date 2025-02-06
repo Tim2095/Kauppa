@@ -82,7 +82,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-10 text-center" >
+        <div className="mt-10 text-center">
           <p className="border-t-2 pt-4 ml-4 mr-4">Shop.co © 2000-2023, All Rights Reserved</p>
         </div>
         <div className="flex mt-4 justify-center">
