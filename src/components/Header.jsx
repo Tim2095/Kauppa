@@ -10,10 +10,8 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [searchedProduct, setSearchedProduct] = useState("");
-  console.log(searchedProduct);
+  
   const products = useSelector((state) => state.product);
-  console.log(products);
-
   const filteredProducts = products.filter((product) => {
     if (searchedProduct) {
       return product?.name

@@ -17,8 +17,13 @@ const getNewProducts = async () => {
   return response.data
 }
 
+const getOneProduct = async (productId) => {
+  const response = await axios.get(`${baseUrl}/${productId}`)
+  return response.data
+}
 
 export default {
   getAllProducts, 
-  getNewProducts
+  getNewProducts,
+  getOneProduct
 }
