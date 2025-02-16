@@ -22,10 +22,9 @@ const Product = () => {
           <img className="w-full" src={product.image} alt="" />
         </div>
         <div>
-          <h3 className="font-anton text-2xl mt-4">{product.name}</h3>
-          <p className="font-dmSans text-2xl font-bold">${product.price}</p>
-          <p>{product.description}</p>
-
+          <h3 className="font-anton text-2xl mt-4 uppercase bold">{product.name}</h3>
+          <p className="font-dmSans text-2xl font-bold mt-2 mb-2">${product.price}</p>
+          <p className="pb-6 font-dmSans text-sm text-slate-500 ">{product.description}</p>
         </div>
       </div>
     </div>
