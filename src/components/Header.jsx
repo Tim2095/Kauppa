@@ -18,9 +18,7 @@ const Header = () => {
         ?.toLowerCase()
         .startsWith(searchedProduct.toLowerCase());
     }
-    return "";
   });
-  console.log(filteredProducts);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
