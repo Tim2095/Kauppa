@@ -5,6 +5,7 @@ import productServices from "../services/product";
 const Product = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState("");
+  const [qti, setQti] = useState(1);
 
   const colors = [
     { name: "Red", code: "bg-red-500" },
@@ -62,7 +63,7 @@ const Product = () => {
         </div>
       </div>
 
-      <div className="flex flex-col  pb-3 pt-5 border-t">
+      <div className="flex flex-col  pb-3 pt-5 border-y">
         <p className="mb-4">Select Colors</p>
         <div className="flex gap-3 w-full justify-start items-start">
           {colors.map((color) => (
@@ -84,12 +85,12 @@ const Product = () => {
           ))}
         </div>
       </div>
-      <div>
-        <p>Choose Size</p>
+      <div className="border-y py-6">
+        <p className="mb-4">Choose Size</p>
         {sizes.map((size) => (
           <button
             key={size.name}
-            className={`py-1 px-3 m-1 rounded-lg ${
+            className={`py-1 px-3 m-1 rounded-full ${
               selectSize === size.code ? "bg-black text-white" : "bg-slate-100"
             }`}
             onClick={() => setSelectSize(size.code)}
@@ -98,7 +99,13 @@ const Product = () => {
           </button>
         ))}
       </div>
-      <div></div>
+      <div>
+        <div className="bg-slate-100 text-xl py-2 px-8 inline-block rounded-full mt-6 ">
+          <button>-</button>
+          <span className="mx-4">{qti}</span>
+          <button>+</button>
+        </div>
+      </div>
     </div>
   );
 };
