@@ -101,9 +101,9 @@ const Product = () => {
       </div>
       <div>
         <div className="bg-slate-100 text-xl py-2 px-8 inline-block rounded-full mt-6 ">
-          <button>-</button>
+          <button onClick={() => setQti(qti <= 1 ? 1 : qti - 1)}>-</button>
           <span className="mx-4">{qti}</span>
-          <button>+</button>
+          <button onClick={() => setQti(qti + 1)}>+</button>
         </div>
       </div>
     </div>
