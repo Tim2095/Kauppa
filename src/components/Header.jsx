@@ -7,6 +7,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchedProduct, setSearchedProduct] = useState("");
@@ -64,9 +65,10 @@ const Header = () => {
               </div>
               <div className="w-full mt-4 px-4">
                 {filteredProducts.map((product) => (
-                  <h2 key={product.id} className="text-lg font-semibold my-2">
-                    {product.name}
-                  </h2>
+                  <div  key={product.id} className="text-lg font-semibold my-2">
+                    <Link onClick={() => setIsSearchOpen(false)} to={`products/${product.id}`}>{product.name}</Link>
+                    {/* <a href={`/products/${product.id}`}>{product.name}</a> */}
+                  </div>
                 ))}
               </div>
             </div>
