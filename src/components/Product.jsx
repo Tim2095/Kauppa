@@ -99,11 +99,14 @@ const Product = () => {
           </button>
         ))}
       </div>
-      <div>
-        <div className="bg-slate-100 text-xl py-2 px-8 inline-block rounded-full mt-6 ">
+      <div className="flex items-center">
+        <div className="bg-slate-100 text-xl py-2 px-6 inline-block rounded-full mt-6 mr-3 ">
           <button onClick={() => setQti(qti <= 1 ? 1 : qti - 1)}>-</button>
           <span className="mx-4">{qti}</span>
           <button onClick={() => setQti(qti + 1)}>+</button>
+        </div>
+        <div className="bg-black text-white text-sm py-2 px-8 inline-block rounded-full mt-6">
+          <button>Add to Cart</button>
         </div>
       </div>
     </div>
