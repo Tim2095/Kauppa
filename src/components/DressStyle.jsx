@@ -13,8 +13,8 @@ const DressStyle = () => {
         <img src={formalImg} alt="" onClick={() => navigate('/formal')} />
       </div>
       <div className='flex flex-col gap-y-4'>
-        <img src={partyImg} alt="" onClick={() => navigate()} />
-        <img src={gymImg} alt="" />
+        <img src={partyImg} alt="" onClick={() => navigate('(/party')} />
+        <img src={gymImg} alt="" onClick={() => navigate('/gym')} />
       </div>
     </div>
   )
