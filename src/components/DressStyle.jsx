@@ -10,7 +10,7 @@ const DressStyle = () => {
       <h2 className="font-bold font-anton text-center pt-10 text-3xl max-w-60 leading-9">BROWSE BY DRESS STYLE</h2>
       <div className='flex flex-col gap-y-4'>
         <img src={casualImg} alt="" onClick={() => navigate('/casual')} />
-        <img src={formalImg} alt="" />
+        <img src={formalImg} alt="" onClick={() => navigate('/formal')} />
       </div>
       <div className='flex flex-col gap-y-4'>
         <img src={partyImg} alt="" />
