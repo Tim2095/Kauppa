@@ -11,6 +11,8 @@ import Casual from "./components/clothes-selection/Casual";
 import HomePage from "./components/HomePage";
 import Product from "./components/Product";
 import Formal from "./components/clothes-selection/Formal";
+import Party from "./components/clothes-selection/Party";
+import Gym from "./components/clothes-selection/Gym";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,6 +35,8 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="casual" element={<Casual />} />
         <Route path="formal" element={<Formal />} />
+        <Route path="party" element={<Party />} />
+        <Route path="gym"  element={<Gym />} />
         <Route path="products/:productId" element={<Product />} />
       </Routes>
       <Footer />
