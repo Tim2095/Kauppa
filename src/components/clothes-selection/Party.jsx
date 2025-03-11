@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import filterLogo from "../../assets/img/mobile/mobile-filter.png";
+
 
 const Party = () => {
   const products = useSelector((state) => state.product);
@@ -33,9 +33,6 @@ const Party = () => {
         {breadcrumbLinks}
         <div className="flex justify-between items-center">
           <h2 className="mt-3 font-dmSans bold text-2xl font-bold">Party</h2>
-          <div>
-            <img src={filterLogo} alt="" />
-          </div>
         </div>
       </nav>
 

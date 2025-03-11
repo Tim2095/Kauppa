@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import filterLogo from "../../assets/img/mobile/mobile-filter.png";
 
 const Formal = () => {
   const products = useSelector((state) => state.product);
@@ -34,9 +33,6 @@ const Formal = () => {
 
         <div className="flex justify-between items-center">
           <h2 className="mt-3 font-dmSans bold text-2xl font-bold">Formal</h2>
-          <div>
-            <img src={filterLogo} alt="" />
-          </div>
         </div>
       </nav>
 
