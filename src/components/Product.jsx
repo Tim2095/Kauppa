@@ -10,7 +10,7 @@ const Product = () => {
   const [qti, setQti] = useState(1);
   
   const dispatch = useDispatch() 
-  const products = useSelector(state => state.cart.cartProducts)
+  
   
 
 
@@ -53,8 +53,7 @@ const Product = () => {
       size: selectSize
     }
 
-    console.log(addedProduct)
-    dispatch(addProduct({name: 't-paita'}))
+    dispatch(addProduct(addedProduct)) 
   }
 
   useEffect(() => {
