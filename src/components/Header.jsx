@@ -11,8 +11,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchedProduct, setSearchedProduct] = useState("");
-  
+
   const products = useSelector((state) => state.product);
+  const cartProducts = useSelector((state) => state.cart.cartProducts);
+  console.log(cartProducts);
   const filteredProducts = products.filter((product) => {
     if (searchedProduct) {
       return product?.name
@@ -65,15 +67,22 @@ const Header = () => {
               </div>
               <div className="w-full mt-4 px-4">
                 {filteredProducts.map((product) => (
-                  <div  key={product.id} className="text-lg font-semibold my-2">
-                    <Link onClick={() => setIsSearchOpen(false)} to={`products/${product.id}`}>{product.name}</Link>
-                    {/* <a href={`/products/${product.id}`}>{product.name}</a> */}
+                  <div key={product.id} className="text-lg font-semibold my-2">
+                    <Link
+                      onClick={() => setIsSearchOpen(false)}
+                      to={`products/${product.id}`}
+                    >
+                      {product.name}
+                    </Link>
                   </div>
                 ))}
               </div>
             </div>
           )}
-          <FontAwesomeIcon icon={faCartShopping} />
+          <FontAwesomeIcon
+            icon={faCartShopping}
+            className={cartProducts.length >= 1 ? "text-green-400" : ""}
+          />
           <FontAwesomeIcon icon={faUser} />
         </div>
       </div>
