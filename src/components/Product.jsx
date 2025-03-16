@@ -50,6 +50,7 @@ const Product = () => {
       description: productDescription,
       color: selectedColor,
       qti,
+      size: selectSize
     }
 
     console.log(addedProduct)
