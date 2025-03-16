@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
+
 const Casual = () => {
   const products = useSelector((state) => state.product);
   const location = useLocation();
 
   const paths = location.pathname.split("/").filter((path) => path);
+
   const breadcrumbLinks = paths.map((path, index) => {
     const routeTo = "/" + paths.slice(0, index + 1).join("/");
     return (

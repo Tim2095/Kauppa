@@ -18,7 +18,9 @@ const App = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
+
   useEffect(() => {
+
     window.scrollTo(0, 0)
 
     const fetchAllProducts = async () => {

@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import productServices from "../services/product";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct } from "../reducer/cart-slice";
 
 const Product = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState("");
   const [qti, setQti] = useState(1);
+  
+  const dispatch = useDispatch() 
+  const products = useSelector(state => state.cart.cartProducts)
+  
+
 
   const colors = [
     { name: "Red", code: "bg-red-500" },
@@ -35,7 +42,14 @@ const Product = () => {
   const [selectedColor, setSelectedColor] = useState(colors[0].code);
   const [selectSize, setSelectSize] = useState("");
 
+  const addProductHandler = (product) => {
+
+    console.log(products)
+    dispatch(addProduct({name: 't-paita'}))
+  }
+
   useEffect(() => {
+
     const getProduct = async () => {
       const product = await productServices.getOneProduct(productId);
       setProduct(product);
@@ -106,7 +120,7 @@ const Product = () => {
           <button onClick={() => setQti(qti + 1)}>+</button>
         </div>
         <div className="bg-black text-white text-sm py-2 px-8 inline-block rounded-full mt-6">
-          <button>Add to Cart</button>
+          <button onClick={addProductHandler}>Add to Cart</button>
         </div>
       </div>
     </div>
