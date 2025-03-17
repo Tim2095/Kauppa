@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import logoImg from "../assets/img/SHOP.CO.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +12,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchedProduct, setSearchedProduct] = useState("");
+  const navigate = useNavigate()
 
   const products = useSelector((state) => state.product);
   const cartProducts = useSelector((state) => state.cart.cartProducts);
@@ -81,7 +83,7 @@ const Header = () => {
           <FontAwesomeIcon
             icon={faCartShopping}
             className={cartProducts.length >= 1 ? "text-green-400" : ""}
-          />
+           onClick={() => navigate('/cart')}/>
           <FontAwesomeIcon icon={faUser} />
         </div>
       </div>

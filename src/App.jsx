@@ -13,6 +13,7 @@ import Product from "./components/Product";
 import Formal from "./components/clothes-selection/Formal";
 import Party from "./components/clothes-selection/Party";
 import Gym from "./components/clothes-selection/Gym";
+import Cart from "./components/Cart";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="party" element={<Party />} />
         <Route path="gym"  element={<Gym />} />
         <Route path="products/:productId" element={<Product />} />
+        <Route path="cart" element={<Cart />} />
       </Routes>
       <Footer />
     </div>
