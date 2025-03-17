@@ -14,7 +14,6 @@ const Header = () => {
 
   const products = useSelector((state) => state.product);
   const cartProducts = useSelector((state) => state.cart.cartProducts);
-  console.log(cartProducts);
   const filteredProducts = products.filter((product) => {
     if (searchedProduct) {
       return product?.name
