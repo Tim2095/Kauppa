@@ -42,7 +42,7 @@ const Product = () => {
   const [selectedColor, setSelectedColor] = useState(colors[0].code);
   const [selectSize, setSelectSize] = useState("");
 
-  const addProductHandler = (productId, productName, productPrice, productDescription) => {
+  const addProductHandler = (productId, productName, productPrice, productDescription, productImg) => {
     const addedProduct = {
       id: productId, 
       name: productName, 
@@ -50,8 +50,11 @@ const Product = () => {
       description: productDescription,
       color: selectedColor,
       qti,
-      size: selectSize
+      size: selectSize,
+      img: productImg
     }
+
+    console.log(productImg)
 
     dispatch(addProduct(addedProduct)) 
   }
@@ -128,7 +131,7 @@ const Product = () => {
           <button onClick={() => setQti(qti + 1)}>+</button>
         </div>
         <div className="bg-black text-white text-sm py-2 px-8 inline-block rounded-full mt-6">
-          <button onClick={() => addProductHandler(product.id, product.name, product.price, product.description)}>Add to Cart</button>
+          <button onClick={() => addProductHandler(product.id, product.name, product.price, product.description, product.image)}>Add to Cart</button>
         </div>
       </div>
     </div>
