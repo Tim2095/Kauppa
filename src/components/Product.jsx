@@ -54,7 +54,7 @@ const Product = () => {
       img: productImg
     }
 
-    console.log(productImg)
+    console.log(addedProduct)
 
     dispatch(addProduct(addedProduct)) 
   }

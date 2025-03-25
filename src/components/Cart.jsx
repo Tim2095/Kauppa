@@ -37,12 +37,26 @@ const Cart = () => {
         </div>
       </nav>
 
-      <div className="border rounded-xl px-3">
+      <div className="border rounded-xl px-3 py-2">
         {products.map((product) => (
-          <div key={product.id}>
-            <p>{product.name}</p>
-            <p>{product.color}</p>
-            <p>{product.size}</p>
+          <div key={product.id} className="flex border-b py-4">
+            <div className="mr-3">
+              <img
+                src={product.img}
+                alt="added product img"
+                className="w-[100px] h-[120px]"
+              />
+            </div>
+            <div>
+              <div>
+                <p>{product.name}</p>
+                <p>Color: {product.color}</p>
+                <p>Size: {product.size}</p>
+              </div>
+              <div>
+
+              </div>
+            </div>
           </div>
         ))}
       </div>
