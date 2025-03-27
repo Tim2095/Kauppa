@@ -23,7 +23,7 @@ const Product = () => {
     { name: "x-lg", code: "X-Large" },
   ];
 
-  const [selectedColor, setSelectedColor] = useState(colors[0].name); // Store color NAME
+  const [selectedColor, setSelectedColor] = useState(colors[0].name); 
   const [selectSize, setSelectSize] = useState("");
 
   const addProductHandler = () => {
@@ -32,7 +32,7 @@ const Product = () => {
       name: product.name,
       price: product.price,
       description: product.description,
-      color: selectedColor, // Now storing actual color name (e.g., "Red")
+      color: selectedColor, 
       qti,
       size: selectSize,
       img: product.image,
