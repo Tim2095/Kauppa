@@ -8,11 +8,7 @@ const Product = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState("");
   const [qti, setQti] = useState(1);
-  
-  const dispatch = useDispatch() 
-  
-  
-
+  const dispatch = useDispatch();
 
   const colors = [
     { name: "Red", code: "bg-red-500" },
@@ -21,46 +17,32 @@ const Product = () => {
   ];
 
   const sizes = [
-    {
-      name: "sm",
-      code: "Small",
-    },
-    {
-      name: "md",
-      code: "Medium",
-    },
-    {
-      name: "lg",
-      code: "Large",
-    },
-    {
-      name: "x-lg",
-      code: "X-Large",
-    },
+    { name: "sm", code: "Small" },
+    { name: "md", code: "Medium" },
+    { name: "lg", code: "Large" },
+    { name: "x-lg", code: "X-Large" },
   ];
 
-  const [selectedColor, setSelectedColor] = useState(colors[0].code);
+  const [selectedColor, setSelectedColor] = useState(colors[0].name); // Store color NAME
   const [selectSize, setSelectSize] = useState("");
 
-  const addProductHandler = (productId, productName, productPrice, productDescription, productImg) => {
+  const addProductHandler = () => {
     const addedProduct = {
-      id: productId, 
-      name: productName, 
-      price: productPrice, 
-      description: productDescription,
-      color: selectedColor,
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      description: product.description,
+      color: selectedColor, // Now storing actual color name (e.g., "Red")
       qti,
       size: selectSize,
-      img: productImg
-    }
+      img: product.image,
+    };
 
-    console.log(addedProduct)
-
-    dispatch(addProduct(addedProduct)) 
-  }
+    console.log(addedProduct);
+    dispatch(addProduct(addedProduct));
+  };
 
   useEffect(() => {
-
     const getProduct = async () => {
       const product = await productServices.getOneProduct(productId);
       setProduct(product);
@@ -71,45 +53,32 @@ const Product = () => {
 
   return (
     <div className="mt-6 border-y mx-4 pb-4">
-      <div className="pt-10 ">
-        <div>
-          <img className="w-full" src={product.image} alt="" />
-        </div>
-        <div>
-          <h3 className="font-anton text-2xl mt-4 uppercase bold">
-            {product.name}
-          </h3>
-          <p className="font-dmSans text-2xl font-bold mt-2 mb-2">
-            ${product.price}
-          </p>
-          <p className="font-dmSans text-sm text-slate-500 mb-4 ">
-            {product.description}
-          </p>
-        </div>
+      <div className="pt-10">
+        <img className="w-full" src={product.image} alt={product.name} />
+        <h3 className="font-anton text-2xl mt-4 uppercase bold">{product.name}</h3>
+        <p className="font-dmSans text-2xl font-bold mt-2 mb-2">${product.price}</p>
+        <p className="font-dmSans text-sm text-slate-500 mb-4">{product.description}</p>
       </div>
 
-      <div className="flex flex-col  pb-3 pt-5 border-y">
-        <p className="mb-4">Select Colors</p>
-        <div className="flex gap-3 w-full justify-start items-start">
+      {/* Color Selection */}
+      <div className="flex flex-col pb-3 pt-5 border-y">
+        <p className="mb-4">Select Color</p>
+        <div className="flex gap-3">
           {colors.map((color) => (
             <button
               key={color.name}
-              className={`w-12 h-12 ${
-                color.code
-              } rounded-full transition-transform transform hover:scale-105 flex items-center justify-center ${
-                selectedColor === color.code
-                  ? "border-black"
-                  : "border-transparent"
+              className={`w-12 h-12 ${color.code} rounded-full hover:scale-105 flex items-center justify-center ${
+                selectedColor === color.name ? "border-4 border-black" : ""
               }`}
-              onClick={() => setSelectedColor(color.code)}
+              onClick={() => setSelectedColor(color.name)} // Store color name
             >
-              {selectedColor === color.code && (
-                <span className="text-white font-bold">✔</span>
-              )}
+              {selectedColor === color.name && <span className="text-white font-bold">✔</span>}
             </button>
           ))}
         </div>
       </div>
+
+      {/* Size Selection */}
       <div className="border-y py-6">
         <p className="mb-4">Choose Size</p>
         {sizes.map((size) => (
@@ -124,15 +93,20 @@ const Product = () => {
           </button>
         ))}
       </div>
+
+      {/* Quantity & Add to Cart */}
       <div className="flex items-center">
-        <div className="bg-slate-100 text-xl py-2 px-6 inline-block rounded-full mt-6 mr-3 ">
+        <div className="bg-slate-100 text-xl py-2 px-6 inline-block rounded-full mt-6 mr-3">
           <button onClick={() => setQti(qti <= 1 ? 1 : qti - 1)}>-</button>
           <span className="mx-4">{qti}</span>
           <button onClick={() => setQti(qti + 1)}>+</button>
         </div>
-        <div className="bg-black text-white text-sm py-2 px-8 inline-block rounded-full mt-6">
-          <button onClick={() => addProductHandler(product.id, product.name, product.price, product.description, product.image)}>Add to Cart</button>
-        </div>
+        <button
+          className="bg-black text-white text-sm py-2 px-8 rounded-full mt-6"
+          onClick={addProductHandler}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );
