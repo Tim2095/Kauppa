@@ -1,10 +1,13 @@
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import deleteLogo from "../assets/logo/mobile/delete-logo.png";
+import { useDispatch } from "react-redux";
+import { removeProduct } from "../reducer/cart-slice";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.cartProducts);
   const location = useLocation();
+  const dispatch = useDispatch()
 
   const paths = location.pathname.split("/").filter((path) => path);
 
@@ -22,6 +25,10 @@ const Cart = () => {
       </span>
     );
   });
+
+  const removeProductHandler = (id) => {
+    dispatch(removeProduct(id))
+  }
 
   return (
     <div className="p-4">
@@ -59,7 +66,7 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <button className="w-6 h-6 flex items-center justify-center">
+            <button className="w-6 h-6 flex items-center justify-center" onClick={() => removeProductHandler(product.id)}>
               <img src={deleteLogo} alt="Delete" className="w-full h-full" />
             </button>
           </div>
